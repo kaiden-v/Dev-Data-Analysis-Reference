@@ -4,17 +4,12 @@
 
 ---
 
-## 📂 Navigation
+## 📂 Navigation / 📁 File and Folder Management
 
 cd <path>             : change directory (open a folder)  
 pwd                   : show current directory path (print working directory)  
 ls / dir              : list files and folders in current directory  
 clear                 : clear the terminal screen  
-
----
-
-## 📁 File and Folder Management
-
 mkdir <name>          : create a new folder  
 rm <file>             : delete a file  
 rm -r <folder>        : delete a folder and its contents  
@@ -26,6 +21,12 @@ mv <src> <dest>       : move or rename file or folder
 ## 🖊️ VS Code
 
 code .                : open current folder in VS Code Explorer 
+
+---
+# 🔵 RStudio
+rstudio my_script.R    : open a single R file in RStudio  
+rstudio my_report.Rmd  : open an R Markdown file in RStudio  
+rstudio .              : open the entire folder as a project in RStudio
 
 ---
 
@@ -70,3 +71,9 @@ git push -u origin <branch>     : first push of a new branch, creates remote bra
 git log                           : show commit history  
 git log --oneline                 : show condensed commit history  
 git log --graph --oneline --all   : show branch graph history  
+
+### Retrieving saved commit
+
+git checkout -b <new-branch> <commit>   : create a new branch at a past commit to retrieve or continue work safely  
+git revert <commit>                     : create a new commit that undoes the changes of a previous commit (safe for team projects)  
+git reset --hard <commit>               : reset current branch to a past commit, discarding all changes after it (destructive; use with caution)
