@@ -16,9 +16,9 @@ mkdir <name>                 : create a new folder
 rm <file>                    : delete a file 
 rm -r <folder>               : delete a folder and its contents  
 cp <src> <dest>              : copy file or folder  
-mv <src> <dest>              : move or rename file or folder
-touch <filename>             : creates new file (macOS Terminal)
-ni <filename> -ItemType File :created a new file (Windows Powershell)
+mv <src> <dest>              : move or rename file or folder  
+touch <filename>             : creates new file (macOS Terminal)  
+ni <filename> -ItemType File :created a new file (Windows Powershell)  
 
 ---
 
@@ -67,8 +67,8 @@ git branch                        : list all branches (current branch has a *)
 git branch <name>                 : create a new branch  
 git checkout <name>               : switch to an existing branch  
 git checkout -b <name>            : create and switch to a new branch  
-git merge <branch>                : merge another branch into current branch (for personal work merge into main locally)
-git push -u origin <branch>     : first push of a new branch, creates remote branch (for group use; then create a pull request into main on GitHub)
+git merge <branch>                : merge another branch into current branch (for personal work merge into main locally)  
+git push -u origin <branch>     : first push of a new branch, creates remote branch (for group use; then create a pull request into main on GitHub)  
 
 ### Viewing History
 
@@ -81,4 +81,4 @@ git log --graph --oneline --all   : show branch graph history
 git restore <file>                      : restores content of a file to the latest commit (used when file contents deleted)         
 git checkout -b <new-branch> <commit>   : create a new branch at a past commit to retrieve or continue work safely  
 git revert <commit>                     : create a new commit that undoes the changes of a previous commit   
-git reset --hard <commit>               : reset current branch to a past commit, discarding all changes after it 
+git reset --hard <commit>               : reset current branch to a past commit, discarding all changes after it  
