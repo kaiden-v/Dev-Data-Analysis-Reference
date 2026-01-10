@@ -84,3 +84,8 @@
 `git checkout -b <new-branch> <commit>`   : create a new branch at a past commit to retrieve or continue work safely  
 `git revert <commit>`                     : create a new commit that undoes the changes of a previous commit  
 `git reset --hard <commit>`               : reset current branch to a past commit, discarding all changes after it  
+
+### Removing Cache Files
+`git rm -r --cached <file>`                     : remove file from being tracked by git  
+`git rm -r --cached .`                     : remove all files listed in .gitignore file from being tracked by git  
+
