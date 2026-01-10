@@ -1,6 +1,6 @@
 # Command References for Apps
 
-This repository contains command line and shortcut references for various apps I use regularly.
+This repository contains command line and shortcut references for various apps.
 
 ## Available References
 
