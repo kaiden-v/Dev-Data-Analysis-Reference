@@ -19,5 +19,7 @@
 `mv <src> <dest>`              : move or rename file or folder  
 `touch <filename>`             : creates new file (macOS Terminal)  
 `ni <filename> -ItemType File` : creates a new file (Windows Powershell)  
+`open <filename>`              : opens file with its defult viewer  
+`start <filename>`             : opens file with its defult viewer  
 
 ---
