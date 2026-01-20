@@ -8,7 +8,7 @@ This repository contains command and shortcut references for various apps/softwa
 - [Git / GitHub Reference](GitReference.md)
 - [VS Code Reference](VSCodeReference.md)
 - [R Studio Reference](RStudioReference.md)
-- [Excel Reference](ExcelReference.md) 
+- [Pandas Reference](PandasReference.md)
 
 Each file contains a curated list of commands and shortcuts for the respective application.
 
