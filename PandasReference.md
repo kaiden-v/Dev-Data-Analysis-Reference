@@ -1,8 +1,8 @@
 # Pandas Reference
 
-## Installing and Checking Version of Pandas (In Command Line)
+## Installing and Checking Version of Pandas
 `pip install pandas`           : Install latest version of pandas  
-`pip install pandas <version>` : Install specific version of pandas 
+`pip install pandas <version>` : Install specific version of pandas   
 `pandas --version`             : Check current version of pandas installed in environment
  
 ---
@@ -27,6 +27,34 @@ A **DataFrame** is a two-dimensional, tabular data structure with labeled rows a
 - Column-wise and row-wise operations
 - Support for mixed data types
 - Fast, vectorized operations (built on NumPy)
+
+---
+
+## 📌 Example DataFrame
+
+```python
+import pandas as pd
+
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 35],
+    'Country': ['USA', 'Canada', 'UK']
+}
+
+df = pd.DataFrame(data)
+print(df)
+````
+
+**Output:**
+
+```
+     Name  Age Country
+0   Alice   25     USA
+1     Bob   30  Canada
+2 Charlie   35      UK
+```
+
+---
 
 ## 📥 Loading a DataFrame
 
