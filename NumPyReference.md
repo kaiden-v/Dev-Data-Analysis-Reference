@@ -56,6 +56,10 @@ arr.nbytes                                          # Returns the tota memory us
 ```
 
 ### Array Data Types
+```python
+type_arr = arr.astype(np.<type>)
+```
+
 | Type           | Code     | Description                                           |
 |----------------|---------|-------------------------------------------------------|
 | int8           | i1      | 8-bit signed integer                                  |
@@ -74,3 +78,7 @@ arr.nbytes                                          # Returns the tota memory us
 | object         | O       | Any Python object                                     |
 | string_        | S       | Fixed-length ASCII string (e.g., 'S10')              |
 | unicode_       | U       | Fixed-length Unicode string (e.g., 'U10')            |
+
+---
+
+
