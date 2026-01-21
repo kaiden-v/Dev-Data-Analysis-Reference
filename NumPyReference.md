@@ -56,17 +56,21 @@ arr.nbytes                                          # Returns the tota memory us
 ```
 
 ### Array Data Types
-| Type       | Code | Description                        |
-|------------|------|------------------------------------|
-| int8       | i1   | 8-bit signed integer               |
-| uint8      | u1   | 8-bit unsigned integer             |
-| int16      | i2   | 16-bit signed integer              |
-| int32      | i4   | 32-bit signed integer              |
-| int64      | i8   | 64-bit signed integer              |
-| float32    | f4   | 32-bit floating point              |
-| float64    | f8   | 64-bit floating point              |
-| bool       | ?    | Boolean (True / False)             |
-| object     | O    | Any Python object                  |
-| string_    | S    | Fixed-length ASCII string          |
-| unicode_   | U    | Fixed-length Unicode string        |
-# Rare types: float16, float128, complex64/128/256
+| Type           | Code     | Description                                           |
+|----------------|---------|-------------------------------------------------------|
+| int8           | i1      | 8-bit signed integer                                  |
+| uint8          | u1      | 8-bit unsigned integer                                |
+| int16          | i2      | 16-bit signed integer                                 |
+| int32          | i4      | 32-bit signed integer                                 |
+| int64          | i8      | 64-bit signed integer                                 |
+| float16        | f2      | Half-precision floating point                         |
+| float32        | f4 / f  | Standard single-precision floating point             |
+| float64        | f8 / d  | Standard double-precision floating point             |
+| float128       | f16 / g | Extended-precision floating point (rare / platform dependent) |
+| complex64      | c8      | Complex number (2×32-bit floats)                     |
+| complex128     | c16     | Complex number (2×64-bit floats)                     |
+| complex256     | c32     | Complex number (2×128-bit floats, rare / platform dependent) |
+| bool           | ?       | Boolean (True / False)                                |
+| object         | O       | Any Python object                                     |
+| string_        | S       | Fixed-length ASCII string (e.g., 'S10')              |
+| unicode_       | U       | Fixed-length Unicode string (e.g., 'U10')            |
