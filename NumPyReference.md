@@ -4,13 +4,13 @@
 
 NumPy is the fundamental package for numerical computing in Python. It provides support for **arrays, matrices, mathematical functions, linear algebra, and more**.
 
-As this is a quick reference guide, more in depth information on the package can be found on the offical [NumPy Documentation](https://numpy.org/doc/).
+As this is a quick reference guide, more in depth information on the package can be found on the offical [NumPy Documentation](https://numpy.org/doc/) page.
 
 ---
 
 ## Installing NumPy
 
-You can install NumPy in your Python environment using **pip**:
+You can install NumPy in your Python environment using the following command in a command line:
 
 ```bash
 pip install numpy <optional_version>
@@ -44,15 +44,42 @@ arr = np.array(<data>)                              # Converts data in list to n
 ### Creating array and initialising the data
 
 ```python
+# Standard data creation
 arr = np.arange(<start>, <stop>, <step>)            # Creates a 1 dimensional array with values in a given range
 arr = np.linspace(<start>, <stop>, <num_values>)    # Creates a 1 dimensional array with evenly spaced values
 arr = np.ones(<shape>)                              # Creates an array filled with ones of shape (rows, columns)
 arr = np.zeros(<shape>)                             # Creates an array filled with zeros of shape (rows, columns)
 arr = np.empty(<shape>)                             # Creates an array without setting initial values of shape (rows, columns)
 arr = np.full(<shape>, <fill_value>)                # Creates an array filled with a specific value of shape (rows, columns)
-arr = np.identity(<square_size>)                    # Creates an identity matrix of square shape 
+arr = np.identity(<square_size>)                    # Creates an identity matrix of square shape
+arr = np.diag(<array>)                              # Create square matrix with <array> on diagonal
 arr = np.triu(<array>)                              # Keeps the upper triangular part of a matrix
 arr = np.tril(<array>)                              # Keeps the lower triangular part of a matrix
+
+# Random data creation
+np.random.seed(<seed_value>)                                            # Set random seed for reproducibility
+arr_uniform = np.random.uniform(low=<min>, high=<max>, size=<size>)     # Creates an array of samples from an uniform distributions
+arr_integers = np.random.randint(low=<min>, high=<max>, size=<size>)    # Creates an array of samples from an integer uniform distributions
+arr_std_norm = np.random.standard_normal(size=<size>)                   # Creates an array of samples from a standard normal distribution
+arr_normal = np.random.normal(loc=<mean>, scale=<std>, size=<size>)     # Creates an array of samples from a custom normal distribution
+arr_binomial = np.random.binomial(n=<trials>, p=<prob>, size=<size>)    # Creates an array of samples from a binomial distribution
+arr_beta = np.random.beta(a=<alpha>, b=<beta>, size=<size>)             # Creates an array of samples from a beta distribution
+arr_chisq = np.random.chisquare(df=<degrees_of_freedom>, size=<size>)   # Creates an array of samples from a chi-square distribution
+arr_gamma = np.random.gamma(shape=<shape>, scale=<scale>, size=<size>)  # Creates an array of samples from a gamma distribution
+
+```
+
+### Saving and Loading Arrays
+```python
+# Saving
+np.save(<file_name>, arr)                                                   # Saves array to a .npy file
+np.savez(<file_name>, <key_1>=<arr_1>, ..., <key_n>=<arr_n>)                # Saves multiple arrays to a .npy file
+np.savez_compressed(<file_name>, <key_1>=<arr_1>, ..., <key_n>=<arr_n>)     # Saves multiple arrays to a compresesed .npy file
+
+# Loading
+arr = np.load(<file_path>)                                                  # load a single array from a .npy file
+arr_1, ..., arr_n = np.load(<file_path=>)                                   # load multiple arrays from a .npy file
+
 ```
 
 ---
@@ -94,13 +121,58 @@ type_arr = arr.astype(np.<type>)                    # Converts elements in an ar
 
 ---
 
-
 ## Indexing and Slicing
+```python
+# Basic indexing
+elem = arr[<index>]                                                 # Access element in a 1D array
+elem = arr[<row_index>, <col_index>]                                # Access element in a 2D array
+elem = arr[<row_index>, <col_index>, <axis_3>]                      # Access element in a 3D array
 
+# Slicing
+slice_1d = arr[<start>:<stop>:<step>]                               # Slice 1D array
+slice_row = arr[<row_index>, <start>:<stop>]                        # Slice columns of a specific row
+slice_col = arr[<start>:<stop>, <col_index>]                        # Slice rows of a specific column
+slice_2d = arr[<row_start>:<row_stop>, <col_start>:<col_stop>]      # Slice a 2D block
+
+# Boolean / conditional indexing
+bool_idx = arr[<array_conditional_expression>]                      # Array of elements meeting condition
+arr[<array_conditional_expression>] = <new_value>                   # Modify elements conditionally
+
+# Special indexs
+last_elem = arr[-1]                                                 # Accewss last element in an array
+reverse_arr = arr[::-1]                                             # Returns reversed array
+
+```
 
 ---
 
 ## Universal Functions (Operations)
+
+### Array / Matix Manipulation
+```python 
+# Reshape / Flatten
+arr_reshaped = arr.reshape(<new_shape>)                                 # Change shape; total elements must match
+arr_flat = arr.flatten()                                                # Flattens higher dimension array into a 1D array 
+
+# Transpose
+arr_T = arr.T                                                           # Transpose 2D array (swap rows and columns)
+arr_swapaxes = arr.swapaxes(<axis1>, <axis2>)                           # Swap two axes of array
+
+# Add / Remove dimensions
+arr_expand = np.expand_dims(arr, axis=<axis>)                           # Add a new axis at specified position
+arr_squeeze = np.squeeze(arr, axis=<axis>)                              # Removes axies of length 1 (Optionally removes specified axis)
+
+# Stack / Concatenate Arrays
+arr_vstack = np.vstack([<array1>, <array2>, ...])                       # Stack arrays vertically (row-wise)
+arr_hstack = np.hstack([<array1>, <array2>, ...])                       # Stack arrays horizontally (column-wise)
+arr_stack = np.stack([<array1>, <array2>, ...], axis=<axis>)            # Stack along a new axis
+arr_concat = np.concatenate([<array1>, <array2>, ...], axis=<axis>)     # Join along existing axis
+
+# Split Arrays
+arr_split = np.split(<array>, <num_or_indices>, axis=<axis>)            # Split array into equal or specified parts
+arr_hsplit = np.hsplit(<array>, <num_or_indices>)                       # Split horizontally (columns)
+arr_vsplit = np.vsplit(<array>, <num_or_indices>)                       # Split vertically (rows)
+```
 
 ### Unary Functions (Elements-Wise Operations)
 ``` python 
@@ -197,4 +269,51 @@ result_arr = np.where(<condition>, <value_or_array_if_true>, <value_or_array_if_
 
 indices_where = np.where(<array_expression>)        # Indices where condition is True
 ```
----
+
+### Statistical Methods
+```python
+arr_sum = np.sum(arr)                 # Calculates sum of elements
+arr_mean = np.mean(arr)               # Calculates arithmetic mean
+arr_std = np.std(arr)                 # Calculates standard deviation
+arr_var = np.var(arr)                 # Calculates variance
+arr_min = np.min(arr)                 # Calculates minimum value
+arr_max = np.max(arr)                 # Calculates maximum value
+arr_argmin = np.argmin(arr)           # Calculates index of minimum value
+arr_argmax = np.argmax(arr)           # Calculates index of maximum value
+arr_cumsum = np.cumsum(arr)           # Calculates cumulative sum (starts from 0)
+arr_cumprod = np.cumprod(arr)         # Calculates cumulative product (starts from 1)
+
+# Note: Functions accept axis argumement to perform function along either the columns (axis = 0) or rows (axis = 1)
+```
+
+### Sorting
+```python
+arr_sorted = np.sort(arr)              # Sorts array (accepts axis argumement to perform function along either the columns (axis = 0) or rows (axis = 1))
+```
+
+### Unique and Set Logic
+```python
+arr_intersect = np.intersect1d(<array1>, <array2>)      # Elements common to array 1 and array 2
+arr_union = np.union1d(<array1>, <array2>)              # Sorted union of elements in array 1 and array 2
+arr_in = np.in1d(<array1>, <array2>)                    # Boolean array: True if element of array 1 is in array 2
+arr_diff = np.setdiff1d(<array1>, <array2>)             # Elements in array 1 that are not in array 2
+arr_symdiff = np.setxor1d(<array1>, <array2>)           # Elements in either array 1 or array 2 but not both
+```
+
+### Linear Algebra
+```python
+# Basic Operations
+diag_arr = np.diag(A)                                               # Extract diagonal of matrix as 1D array
+dot_product = np.dot(A, B)                                          # Calculates the dot product of two matrices (Alternative using @ operator)
+trace_val = np.trace(A)                                             # Calculates the trace of a matrix (sum of diagonal elements)
+det_val = np.linalg.det(A)                                          # Calculates the determinant of a matrix
+rank_A = np.linalg.matrix_rank(A)                                   # Calculates the Rank of a matrix
+norm_A = np.linalg.norm(A)                                          # Calculates the Frobenius (default) or L2 norm
+eig_vals, eig_vecs = np.linalg.eig(A)                               # Calculates the eigenvalues and eigenvectors of a matrix 
+inv_A = np.linalg.inv(A)                                            # Calculates the exact inverse of square matrix
+pinv_A = np.linalg.pinv(A)                                          # Calculates the Moore-Penrose pseudoinverse
+Q, R = np.linalg.qr(A)                                              # Calculates the QR decomposition: A = Q @ R
+U, S, Vh = np.linalg.svd(A)                                         # Calculates the Singular Value Decomposition: A = U @ diag(S) @ Vh
+x = np.linalg.solve(A, B)                                           # Solves the linear equation Ax = B exactly
+x_lstsq, residuals, rank, s = np.linalg.lstsq(A, B, rcond=None)     # Solves the Least-squares solution
+```
