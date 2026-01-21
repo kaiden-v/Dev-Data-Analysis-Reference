@@ -146,7 +146,7 @@ reverse_arr = arr[::-1]                                             # Returns re
 
 ---
 
-## Universal Functions (Operations)
+## Universal Functions
 
 ### Array / Matix Manipulation
 ```python 
@@ -177,53 +177,57 @@ arr_vsplit = np.vsplit(<array>, <num_or_indices>)                       # Split 
 ### Unary Functions (Elements-Wise Operations)
 ``` python 
 # Basic arithmetic
-arr_add = arr + <value>             # Add a scalar to each element
-arr_sub = arr - <value>             # Subtract a scalar from each element
-arr_mul = arr * <value>             # Multiply each element by a scalar
-arr_div = arr / <value>             # Divide each element by a scalar
-arr_floordiv = arr // <value>       # Floor division of each element by a scalar
+arr_add = arr + <value>                         # Add a scalar to each element
+arr_sub = arr - <value>                         # Subtract a scalar from each element
+arr_mul = arr * <value>                         # Multiply each element by a scalar
+arr_div = arr / <value>                         # Divide each element by a scalar
+arr_floordiv = arr // <value>                   # Floor division of each element by a scalar
 
 # Mathematical functions
-arr_abs = np.abs(arr)               # Absolute value (same as arr.abs())
-arr_fabs = np.fabs(arr)             # Absolute value for floats/complex
-arr_sqrt = np.sqrt(arr)             # Square root (arr ** 0.5)
-arr_square = np.square(arr)         # Square of each element (arr ** 2)
-arr_exp = np.exp(arr)               # Exponent e^x of each element
+arr_abs = np.abs(arr)                           # Absolute value (same as arr.abs())
+arr_fabs = np.fabs(arr)                         # Absolute value for floats/complex
+arr_sqrt = np.sqrt(arr)                         # Square root (arr ** 0.5)
+arr_square = np.square(arr)                     # Square of each element (arr ** 2)
+arr_exp = np.exp(arr)                           # Exponent e^x of each element
 
 # Logarithms
-arr_log = np.log(arr)               # Natural log (base e)
-arr_log10 = np.log10(arr)           # Log base 10
-arr_log2 = np.log2(arr)             # Log base 2
-arr_log1p = np.log1p(arr)           # log(1 + x)
+arr_log = np.log(arr)                           # Natural log (base e)
+arr_log10 = np.log10(arr)                       # Log base 10
+arr_log2 = np.log2(arr)                         # Log base 2
+arr_log1p = np.log1p(arr)                       # log(1 + x)
 
 # Sign and rounding
-arr_sign = np.sign(arr)             # Sign of each element: 1, 0, -1
-arr_ceil = np.ceil(arr)             # Ceiling (smallest integer ≥ element)
-arr_floor = np.floor(arr)           # Floor (largest integer ≤ element)
-arr_rint = np.rint(arr)             # Round to nearest integer
+arr_sign = np.sign(arr)                         # Sign of each element: 1, 0, -1
+arr_ceil = np.ceil(arr)                         # Ceiling (smallest integer ≥ element)
+arr_floor = np.floor(arr)                       # Floor (largest integer ≤ element)
+arr_rint = np.rint(arr)                         # Round to nearest integer
+
+# Rounding and clipping
+arr_rounded = np.round(arr, decimals=<n>)       # Round each element to <n> decimal places
+arr_clipped = np.clip(arr, <min>, <max>)        # Clip each element to be within [<min>, <max>]
 
 # Fractional and special checks
-arr_frac, arr_int = np.modf(arr)    # Fractional and integer parts separately
-arr_isnan = np.isnan(arr)           # Boolean array: True if element is NaN
-arr_isfinite = np.isfinite(arr)     # Boolean: True if element is finite
-arr_isinf = np.isinf(arr)           # Boolean: True if element is infinite
+arr_frac, arr_int = np.modf(arr)                # Fractional and integer parts separately
+arr_isnan = np.isnan(arr)                       # Boolean array: True if element is NaN
+arr_isfinite = np.isfinite(arr)                 # Boolean: True if element is finite
+arr_isinf = np.isinf(arr)                       # Boolean: True if element is infinite
 
 # Trigonometric functions
-arr_cos = np.cos(arr)               # Take each element as arugument for cos
-arr_sin = np.sin(arr)               # Take each element as arugument for sin
-arr_tan = np.tan(arr)               # Take each element as arugument for tan
-arr_cosh = np.cosh(arr)             # Take each element as arugument for cosh
-arr_sinh = np.sinh(arr)             # Take each element as arugument for sinh
-arr_tanh = np.tanh(arr)             # Take each element as arugument for tanh
-arr_arccos = np.arccos(arr)         # Take each element as arugument for arccos
-arr_arcsin = np.arcsin(arr)         # Take each element as arugument for arcsin
-arr_arctan = np.arctan(arr)         # Take each element as arugument for arctan
-arr_arccosh = np.arccosh(arr)       # Take each element as arugument for arccosh
-arr_arcsinh = np.arcsinh(arr)       # Take each element as arugument for arcsinh
-arr_arctanh = np.arctanh(arr)       # Take each element as arugument for arctanh
+arr_cos = np.cos(arr)                           # Take each element as arugument for cos
+arr_sin = np.sin(arr)                           # Take each element as arugument for sin
+arr_tan = np.tan(arr)                           # Take each element as arugument for tan
+arr_cosh = np.cosh(arr)                         # Take each element as arugument for cosh
+arr_sinh = np.sinh(arr)                         # Take each element as arugument for sinh
+arr_tanh = np.tanh(arr)                         # Take each element as arugument for tanh
+arr_arccos = np.arccos(arr)                     # Take each element as arugument for arccos
+arr_arcsin = np.arcsin(arr)                     # Take each element as arugument for arcsin
+arr_arctan = np.arctan(arr)                     # Take each element as arugument for arctan
+arr_arccosh = np.arccosh(arr)                   # Take each element as arugument for arccosh
+arr_arcsinh = np.arcsinh(arr)                   # Take each element as arugument for arcsinh
+arr_arctanh = np.arctanh(arr)                   # Take each element as arugument for arctanh
 
 # Logical operations
-arr_not = np.logical_not(arr) # Element-wise NOT (equivalent to ~arr for booleans)
+arr_not = np.logical_not(arr)                   # Element-wise NOT (equivalent to ~arr for booleans)
 
 ```
 
@@ -231,33 +235,33 @@ arr_not = np.logical_not(arr) # Element-wise NOT (equivalent to ~arr for boolean
 ```python
 
 # Arithmetic operations
-arr_add = np.add(arr1, arr2)                # Add corresponding elements in arrays
-arr_sub = np.subtract(arr1, arr2)           # Subtract elements in second array from first array
-arr_mul = np.multiply(arr1, arr2)           # Multiply array elements
-arr_div = np.divide(arr1, arr2)             # Divide elements
-arr_floordiv = np.floor_divide(arr1, arr2)  # Floor division (truncates remainder)
-arr_pow = np.power(arr1, arr2)              # Raise elements in first array to powers indicated in second array
-arr_mod = np.mod(arr1, arr2)                # Element-wise modulus (remainder of division)
-arr_copysign = np.copysign(arr1, arr2)      # Copy sign of values in second array to first array
+arr_add = np.add(arr1, arr2)                    # Add corresponding elements in arrays
+arr_sub = np.subtract(arr1, arr2)               # Subtract elements in second array from first array
+arr_mul = np.multiply(arr1, arr2)               # Multiply array elements
+arr_div = np.divide(arr1, arr2)                 # Divide elements
+arr_floordiv = np.floor_divide(arr1, arr2)      # Floor division (truncates remainder)
+arr_pow = np.power(arr1, arr2)                  # Raise elements in first array to powers indicated in second array
+arr_mod = np.mod(arr1, arr2)                    # Element-wise modulus (remainder of division)
+arr_copysign = np.copysign(arr1, arr2)          # Copy sign of values in second array to first array
 
 # Element-wise max / min
-arr_max = np.maximum(arr1, arr2)            # Element-wise maximum
-arr_fmax = np.fmax(arr1, arr2)              # Element-wise maximum ignoring NaN
-arr_min = np.minimum(arr1, arr2)            # Element-wise minimum
-arr_fmin = np.fmin(arr1, arr2)              # Element-wise minimum ignoring NaN
+arr_max = np.maximum(arr1, arr2)                # Element-wise maximum
+arr_fmax = np.fmax(arr1, arr2)                  # Element-wise maximum ignoring NaN
+arr_min = np.minimum(arr1, arr2)                # Element-wise minimum
+arr_fmin = np.fmin(arr1, arr2)                  # Element-wise minimum ignoring NaN
 
 # Comparison operators → return Boolean arrays
-arr_gt = np.greater(arr1, arr2)             # arr1 > arr2
-arr_ge = np.greater_equal(arr1, arr2)       # arr1 >= arr2
-arr_lt = np.less(arr1, arr2)                # arr1 < arr2
-arr_le = np.less_equal(arr1, arr2)          # arr1 <= arr2
-arr_eq = np.equal(arr1, arr2)               # arr1 == arr2
-arr_ne = np.not_equal(arr1, arr2)           # arr1 != arr2
+arr_gt = np.greater(arr1, arr2)                 # arr1 > arr2
+arr_ge = np.greater_equal(arr1, arr2)           # arr1 >= arr2
+arr_lt = np.less(arr1, arr2)                    # arr1 < arr2
+arr_le = np.less_equal(arr1, arr2)              # arr1 <= arr2
+arr_eq = np.equal(arr1, arr2)                   # arr1 == arr2
+arr_ne = np.not_equal(arr1, arr2)               # arr1 != arr2
 
 # Logical operations → Boolean arrays
-arr_and = np.logical_and(arr1, arr2)        # Element-wise AND (&)
-arr_or = np.logical_or(arr1, arr2)          # Element-wise OR (|)
-arr_xor = np.logical_xor(arr1, arr2)        # Element-wise XOR (^)
+arr_and = np.logical_and(arr1, arr2)            # Element-wise AND (&)
+arr_or = np.logical_or(arr1, arr2)              # Element-wise OR (|)
+arr_xor = np.logical_xor(arr1, arr2)            # Element-wise XOR (^)
 ```
 ### Conditional Selection
 
