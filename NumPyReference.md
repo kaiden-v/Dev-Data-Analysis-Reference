@@ -17,20 +17,18 @@ import numpy as np
 
 ## Creating arrays
 
-### From existing data sets
+### Converting existing data sets (lists) into arrays
 
 ```python
-data1 = [<data>]
-arr1 = np.array(data1)      # Establish 1 dimensional array from list
 
-data2 = [[<data>],[<data>]]
-arr2 = np.array(data2)      # Establish 2 dimensional array from list
+data1 = [<data>]                                    # Will create 1 a dimensional array from list
+data2 = [[<data>],[<data>]]                         # Will create 2 a dimensional array from list
+data3 - [[[<data>],[<data>]],[[<data>],[<data>]]]   # Will create 3 a dimensional array from list
 
-data3 - [[[<data>],[<data>]],[[<data>],[<data>]]]
-arr3 = np.array(data3)      # Establish 3 dimensional array from list
+arr = np.array(<data>)                              # Converts data in list to ndarray object
 ```
 
-### Creating and establishing the data
+### Creating array and initialising the data
 
 ```python
 arr = np.arange(<start>, <stop>, <step>)            # Creates a 1 dimensional array with values in a given range
@@ -47,3 +45,28 @@ arr = np.tril(<array>)                              # Keeps the lower triangular
 ---
 
 ## Array Information
+
+```python
+arr.shape                                           # Returns the shape of the array (rows, columns)
+arr.ndim                                            # Returns the number of dimensions
+arr.size                                            # Returns the total number of elements
+arr.dtype                                           # Returns the data type of elements
+arr.itemsize                                        # Returns the size (in bytes) of each element
+arr.nbytes                                          # Returns the tota memory used by the array (bytes)
+```
+
+### Array Data Types
+| Type       | Code | Description                        |
+|------------|------|------------------------------------|
+| int8       | i1   | 8-bit signed integer               |
+| uint8      | u1   | 8-bit unsigned integer             |
+| int16      | i2   | 16-bit signed integer              |
+| int32      | i4   | 32-bit signed integer              |
+| int64      | i8   | 64-bit signed integer              |
+| float32    | f4   | 32-bit floating point              |
+| float64    | f8   | 64-bit floating point              |
+| bool       | ?    | Boolean (True / False)             |
+| object     | O    | Any Python object                  |
+| string_    | S    | Fixed-length ASCII string          |
+| unicode_   | U    | Fixed-length Unicode string        |
+# Rare types: float16, float128, complex64/128/256
