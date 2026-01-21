@@ -66,6 +66,14 @@ arr_binomial = np.random.binomial(n=<trials>, p=<prob>, size=<size>)    # Create
 arr_beta = np.random.beta(a=<alpha>, b=<beta>, size=<size>)             # Creates an array of samples from a beta distribution
 arr_chisq = np.random.chisquare(df=<degrees_of_freedom>, size=<size>)   # Creates an array of samples from a chi-square distribution
 arr_gamma = np.random.gamma(shape=<shape>, scale=<scale>, size=<size>)  # Creates an array of samples from a gamma distribution
+arr_poisson = np.random.poisson(lam=<lambda>, size=<size>)              # Creates an array of samples from a poisson distribution
+arr_geometric = np.random.geometric(p=<prob>, size=<size>)              # Creates an array of samples from a geometric distribution
+arr_exponential = np.random.exponential(scale=<scale>, size=<size>)     # Creates an array of samples from a exponential distribution
+arr_laplace = np.random.laplace(loc=<mean>, scale=<scale>, size=<size>) # Creates an array of samples from a laplace distribution
+arr_weibull = np.random.weibull(a=<shape>, size=<size>)                 # Creates an array of samples from a weibull distribution
+arr_f = np.random.f(dfnum=<df1>, dfden=<df2>, size=<size>)              # Creates an array of samples from a F-distribution
+arr_t = np.random.standard_t(df=<df>, size=<size>)                      # Creates an array of samples from a student's t-distribution
+arr_multinomial = np.random.multinomial(n=<trials>, pvals=<prob_array>, size=<size>)  # Creates an array of samples from a Multinomial 
 
 ```
 
@@ -151,8 +159,10 @@ reverse_arr = arr[::-1]                                             # Returns re
 ### Array / Matix Manipulation
 ```python 
 # Reshape / Flatten
-arr_reshaped = arr.reshape(<new_shape>)                                 # Change shape; total elements must match
-arr_flat = arr.flatten()                                                # Flattens higher dimension array into a 1D array 
+arr_reshaped = arr.reshape(<new_shape>)                                 # Change shape; total elements must match (returns new array)
+arr_resize = arr.resize(<new_shape>)                                    # Resize in-place; if new size > old, fills with zeros
+arr_flat = arr.flatten()                                                # Flatten to 1D array (always returns a copy)
+arr_ravel = np.ravel(arr)                                               # Flattens higher dimension array into a 1D array 
 
 # Transpose
 arr_T = arr.T                                                           # Transpose 2D array (swap rows and columns)
@@ -161,6 +171,11 @@ arr_swapaxes = arr.swapaxes(<axis1>, <axis2>)                           # Swap t
 # Add / Remove dimensions
 arr_expand = np.expand_dims(arr, axis=<axis>)                           # Add a new axis at specified position
 arr_squeeze = np.squeeze(arr, axis=<axis>)                              # Removes axies of length 1 (Optionally removes specified axis)
+
+# Modify arrays
+arr_deleted = np.delete(arr, <indices>, axis=<axis>)                    # Delete elements along specified axis
+arr_appended = np.append(arr, <values>, axis=<axis>)                    # Append values (creates new array)
+arr_inserted = np.insert(arr, <indices>, <values>, axis=<axis>)         # Insert values at specific indices
 
 # Stack / Concatenate Arrays
 arr_vstack = np.vstack([<array1>, <array2>, ...])                       # Stack arrays vertically (row-wise)
@@ -205,6 +220,11 @@ arr_rint = np.rint(arr)                         # Round to nearest integer
 # Rounding and clipping
 arr_rounded = np.round(arr, decimals=<n>)       # Round each element to <n> decimal places
 arr_clipped = np.clip(arr, <min>, <max>)        # Clip each element to be within [<min>, <max>]
+
+# Random shuffling / permutations
+np.random.seed(<seed_value>)                     # Set seed for reproducibility
+np.random.shuffle(arr)                           # Shuffle array in-place (does not return anything)
+arr_permuted = np.random.permutation(arr)        # Returns a shuffled copy (original unchanged)
 
 # Fractional and special checks
 arr_frac, arr_int = np.modf(arr)                # Fractional and integer parts separately
@@ -321,3 +341,7 @@ U, S, Vh = np.linalg.svd(A)                                         # Calculates
 x = np.linalg.solve(A, B)                                           # Solves the linear equation Ax = B exactly
 x_lstsq, residuals, rank, s = np.linalg.lstsq(A, B, rcond=None)     # Solves the Least-squares solution
 ```
+
+
+
+
