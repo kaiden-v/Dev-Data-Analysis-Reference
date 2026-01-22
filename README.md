@@ -1,7 +1,8 @@
-# Command References for Apps
+# Dev & Data Analysis Reference
 
-This repository contains command and shortcut references for various apps/software.
+A comprehensive reference for **development tools, Coding Languages, command-line usage, and software/IDE tips**. This repository is designed as a **quick-access guide** for projects, data analysis, and development workflows. For further information, read the respective documentation linked on each page.
 
-## Available References
+---
 
+## References
 
