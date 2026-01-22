@@ -2,9 +2,10 @@
 
 ## Introduction
 
-NumPy is the fundamental package for numerical computing in Python. It provides support for **arrays, matrices, mathematical functions, linear algebra, and more**.
+NumPy is the fundamental package for numerical computing in Python. It provides support for **arrays, matrices, mathematical functions, linear algebra, and more**. This guide will serve as a quick reference to the main features, proccesses and functions of this package. As this is a quick reference guide, more in depth information on the package can be found on the offical [NumPy Documentation](https://numpy.org/doc/) page.
 
-As this is a quick reference guide, more in depth information on the package can be found on the offical [NumPy Documentation](https://numpy.org/doc/) page.
+### Guide Sections
+[Installing NumPy](## Installing NumPy)
 
 ---
 
