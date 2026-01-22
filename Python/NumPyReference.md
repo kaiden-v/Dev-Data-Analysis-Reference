@@ -25,6 +25,11 @@ You can install NumPy in your Python environment using the following command in 
 ```bash
 pip install numpy <optional_version>
 ```
+To check the current version use
+
+```bash
+numpy --version
+```
 
 ---
 
@@ -38,7 +43,7 @@ import numpy as np
 
 ---
 
-## Creating arrays
+## Creating Arrays
 
 ### Converting existing data sets (lists) into arrays
 
