@@ -303,6 +303,7 @@ result_arr = np.where(<condition>, <value_or_array_if_true>, <value_or_array_if_
 
 indices_where = np.where(<array_expression>)        # Indices where condition is True
 ```
+---
 
 ## Statistical Methods
 ```python
@@ -320,10 +321,14 @@ arr_cumprod = np.cumprod(arr)         # Calculates cumulative product (starts fr
 # Note: Functions accept axis argumement to perform function along either the columns (axis = 0) or rows (axis = 1)
 ```
 
+---
+
 ## Sorting
 ```python
 arr_sorted = np.sort(arr)              # Sorts array (accepts axis argumement to perform function along either the columns (axis = 0) or rows (axis = 1))
 ```
+
+---
 
 ## Unique and Set Logic
 ```python
@@ -333,6 +338,8 @@ arr_in = np.in1d(<array1>, <array2>)                    # Boolean array: True if
 arr_diff = np.setdiff1d(<array1>, <array2>)             # Elements in array 1 that are not in array 2
 arr_symdiff = np.setxor1d(<array1>, <array2>)           # Elements in either array 1 or array 2 but not both
 ```
+
+---
 
 ## Linear Algebra
 ```python
