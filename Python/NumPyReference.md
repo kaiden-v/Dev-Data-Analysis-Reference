@@ -2,7 +2,7 @@
 
 ## Introduction
 
-NumPy is the fundamental package for numerical computing in Python. It provides support for **arrays, matrices, mathematical functions, linear algebra, and more**. This guide will serve as a quick reference to the main features, proccesses and functions of this package. As this is a quick reference guide, more in depth information on the package can be found on the offical [NumPy Documentation](https://numpy.org/doc/) page.
+NumPy is the fundamental package for numerical computing in Python. It provides support for **arrays, matrices, mathematical functions, linear algebra, and more**. This guide will serve as a quick reference to the main features, processes and functions of this package. As this is a quick reference guide, more in depth information on the package can be found on the official [NumPy Documentation](https://numpy.org/doc/) page.
 
 ### Guide Sections
 - [Introduction](#introduction)
@@ -28,7 +28,7 @@ pip install numpy <optional_version>
 To check the current version use
 
 ```bash
-numpy --version
+pip show numpy
 ```
 
 ---
@@ -51,7 +51,7 @@ import numpy as np
 
 data1 = [<data>]                                    # Will create 1 a dimensional array from list
 data2 = [[<data>],[<data>]]                         # Will create 2 a dimensional array from list
-data3 - [[[<data>],[<data>]],[[<data>],[<data>]]]   # Will create 3 a dimensional array from list
+data3 = [[[<data>],[<data>]],[[<data>],[<data>]]]   # Will create 3 a dimensional array from list
 
 arr = np.array(<data>)                              # Converts data in list to ndarray object
 ```
@@ -88,7 +88,7 @@ arr_laplace = np.random.laplace(loc=<mean>, scale=<scale>, size=<size>) # Create
 arr_weibull = np.random.weibull(a=<shape>, size=<size>)                 # Creates an array of samples from a weibull distribution
 arr_f = np.random.f(dfnum=<df1>, dfden=<df2>, size=<size>)              # Creates an array of samples from a F-distribution
 arr_t = np.random.standard_t(df=<df>, size=<size>)                      # Creates an array of samples from a student's t-distribution
-arr_multinomial = np.random.multinomial(n=<trials>, pvals=<prob_array>, size=<size>)  # Creates an array of samples from a Multinomial 
+arr_multinomial = np.random.multinomial(n=<trials>, pvals=<prob_array>, size=<size>)  # Creates an array of samples from a multinomial  distribution
 
 ```
 
@@ -115,7 +115,7 @@ arr.ndim                                            # Returns the number of dime
 arr.size                                            # Returns the total number of elements
 arr.dtype                                           # Returns the data type of elements
 arr.itemsize                                        # Returns the size (in bytes) of each element
-arr.nbytes                                          # Returns the tota memory used by the array (bytes)
+arr.nbytes                                          # Returns the total memory used by the array (bytes)
 ```
 
 ### Array Data Types
@@ -162,7 +162,7 @@ bool_idx = arr[<array_conditional_expression>]                      # Array of e
 arr[<array_conditional_expression>] = <new_value>                   # Modify elements conditionally
 
 # Special indexs
-last_elem = arr[-1]                                                 # Accewss last element in an array
+last_elem = arr[-1]                                                 # Access last element in an array
 reverse_arr = arr[::-1]                                             # Returns reversed array
 
 ```
@@ -185,7 +185,7 @@ arr_swapaxes = arr.swapaxes(<axis1>, <axis2>)                           # Swap t
 
 # Add / Remove dimensions
 arr_expand = np.expand_dims(arr, axis=<axis>)                           # Add a new axis at specified position
-arr_squeeze = np.squeeze(arr, axis=<axis>)                              # Removes axies of length 1 (Optionally removes specified axis)
+arr_squeeze = np.squeeze(arr, axis=<axis>)                              # Removes axes of length 1 (Optionally removes specified axis)
 
 # Modify arrays
 arr_deleted = np.delete(arr, <indices>, axis=<axis>)                    # Delete elements along specified axis
@@ -248,18 +248,18 @@ arr_isfinite = np.isfinite(arr)                 # Boolean: True if element is fi
 arr_isinf = np.isinf(arr)                       # Boolean: True if element is infinite
 
 # Trigonometric functions
-arr_cos = np.cos(arr)                           # Take each element as arugument for cos
-arr_sin = np.sin(arr)                           # Take each element as arugument for sin
-arr_tan = np.tan(arr)                           # Take each element as arugument for tan
-arr_cosh = np.cosh(arr)                         # Take each element as arugument for cosh
-arr_sinh = np.sinh(arr)                         # Take each element as arugument for sinh
-arr_tanh = np.tanh(arr)                         # Take each element as arugument for tanh
-arr_arccos = np.arccos(arr)                     # Take each element as arugument for arccos
-arr_arcsin = np.arcsin(arr)                     # Take each element as arugument for arcsin
-arr_arctan = np.arctan(arr)                     # Take each element as arugument for arctan
-arr_arccosh = np.arccosh(arr)                   # Take each element as arugument for arccosh
-arr_arcsinh = np.arcsinh(arr)                   # Take each element as arugument for arcsinh
-arr_arctanh = np.arctanh(arr)                   # Take each element as arugument for arctanh
+arr_cos = np.cos(arr)                           # Take each element as argument for cos
+arr_sin = np.sin(arr)                           # Take each element as argument for sin
+arr_tan = np.tan(arr)                           # Take each element as argument for tan
+arr_cosh = np.cosh(arr)                         # Take each element as argument for cosh
+arr_sinh = np.sinh(arr)                         # Take each element as argument for sinh
+arr_tanh = np.tanh(arr)                         # Take each element as argument for tanh
+arr_arccos = np.arccos(arr)                     # Take each element as argument for arccos
+arr_arcsin = np.arcsin(arr)                     # Take each element as argument for arcsin
+arr_arctan = np.arctan(arr)                     # Take each element as argument for arctan
+arr_arccosh = np.arccosh(arr)                   # Take each element as argument for arccosh
+arr_arcsinh = np.arcsinh(arr)                   # Take each element as argument for arcsinh
+arr_arctanh = np.arctanh(arr)                   # Take each element as argument for arctanh
 
 # Logical operations
 arr_not = np.logical_not(arr)                   # Element-wise NOT (equivalent to ~arr for booleans)
