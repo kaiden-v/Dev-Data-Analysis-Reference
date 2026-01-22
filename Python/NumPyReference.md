@@ -5,8 +5,17 @@
 NumPy is the fundamental package for numerical computing in Python. It provides support for **arrays, matrices, mathematical functions, linear algebra, and more**. This guide will serve as a quick reference to the main features, proccesses and functions of this package. As this is a quick reference guide, more in depth information on the package can be found on the offical [NumPy Documentation](https://numpy.org/doc/) page.
 
 ### Guide Sections
-[Installing NumPy](## Installing NumPy)
-
+- [Introduction](#introduction)
+- [Installing NumPy](#installing-numpy)
+- [Importing NumPy](#importing-numpy)
+- [Creating Arrays](#creating-arrays)
+- [Array Information](#array-information)
+- [Indexing and Slicing](#indexing-and-slicing)
+- [Universal Functions](#universal-functions)
+- [Statistical Methods](#statistical-methods)
+- [Sorting](#sorting)
+- [Unique and Set Logic](#unique-and-set-logic)
+- [Linear Algebra](#linear-algebra)
 ---
 
 ## Installing NumPy
@@ -295,7 +304,7 @@ result_arr = np.where(<condition>, <value_or_array_if_true>, <value_or_array_if_
 indices_where = np.where(<array_expression>)        # Indices where condition is True
 ```
 
-### Statistical Methods
+## Statistical Methods
 ```python
 arr_sum = np.sum(arr)                 # Calculates sum of elements
 arr_mean = np.mean(arr)               # Calculates arithmetic mean
@@ -311,12 +320,12 @@ arr_cumprod = np.cumprod(arr)         # Calculates cumulative product (starts fr
 # Note: Functions accept axis argumement to perform function along either the columns (axis = 0) or rows (axis = 1)
 ```
 
-### Sorting
+## Sorting
 ```python
 arr_sorted = np.sort(arr)              # Sorts array (accepts axis argumement to perform function along either the columns (axis = 0) or rows (axis = 1))
 ```
 
-### Unique and Set Logic
+## Unique and Set Logic
 ```python
 arr_intersect = np.intersect1d(<array1>, <array2>)      # Elements common to array 1 and array 2
 arr_union = np.union1d(<array1>, <array2>)              # Sorted union of elements in array 1 and array 2
@@ -325,7 +334,7 @@ arr_diff = np.setdiff1d(<array1>, <array2>)             # Elements in array 1 th
 arr_symdiff = np.setxor1d(<array1>, <array2>)           # Elements in either array 1 or array 2 but not both
 ```
 
-### Linear Algebra
+## Linear Algebra
 ```python
 # Basic Operations
 diag_arr = np.diag(A)                                               # Extract diagonal of matrix as 1D array
