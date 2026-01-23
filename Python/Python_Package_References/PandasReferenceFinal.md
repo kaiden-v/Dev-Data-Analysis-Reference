@@ -8,6 +8,15 @@ Pandas is the fundamental Python package for **data manipulation and analysis**.
 - [Introduction](#introduction)
 - [Installing Pandas](#installing-pandas)
 - [Importing Pandas](#importing-pandas)
+- [Pandas Objects and Their Creation](#pandas-objects-and-their-creation)
+- [Importing and Exporting Data](#importing-and-exporting-data)
+- [DataFrame and Series Information](#dataframe-and-series-information)
+- [Selection, Indexing and Filtering](#selection-indexing-and-filtering)
+- [Modifying Series or DataFrame](#modifying-series-or-dataframe)
+- [Data Cleaning](#data-cleaniing)
+- [Statistics, Aggregation and Grouping](#statistics-aggregation-and-grouping)
+- [Categorial Data](#categorial-data)
+- [Time Series Analysis](#time-series-analysis)
 
 ---
 
@@ -21,7 +30,7 @@ pip install pandas <optional_version>
 
 To check the current version use
 
-```bash
+```bashupa
 pip show pandas
 ```
 
@@ -82,7 +91,7 @@ df.to_json(<file.json>)                         # Export DataFrame to a JSON fil
 ```
 ---
 
-# DataFrame and Series Information
+## DataFrame and Series Information
 ```python
 df.head()       # View first 5 rows
 df.tail()       # View last 5 rows
@@ -98,7 +107,6 @@ df.index        # Get row indices
 ## Selection, Indexing and Filtering
 
 ### Standard Selection and Indexing
-How to select rows, columns, or specific cells in a DataFrame or Series.
 ```python
 # Selecting columns
 column = df[<column_name>]                      # Select single column as Series
@@ -114,7 +122,6 @@ cell_pos = df.iloc[<row_index>, <col_index>]    # Select specific cell by positi
 ```
 
 ### Filtering and Conditional Selection
-Selecting data based on conditions.
 ```python
 filtered_df = df[<conditional_expression>]      # Filter rows based on condition(s), e.g. df[<column_name>] <value>, & (and), | (or)
 ```
@@ -127,9 +134,13 @@ filtered_df = df[<conditional_expression>]      # Filter rows based on condition
 ```python
 # Adding new columns
 modified_df = df[<new_column>] = <expression_or_value_or_list>   # Create a new column based on an expression, single value, or list
+modified_df = df[<new_column>].apply(f)                          # Create a new column based on an defined function on existing data columns
+modified_df = df[<new_column>].apply(lambda x: <function>)       # Create a new column based on an lambda function on exisiting data columns
 
 # Modifying existing columns
 modified_df = df[<column_name>] = <expression_or_value_or_list>  # Updates an existing column based on an expression, single value, or list
+modified_df = df[<column_name>].apply(f)                         # Updates a new column based on an defined function on existing data columns
+modified_df = df[<column_name>].apply(lambda x: <function>)      # Updates a new column based on an lambda function on existing data columns
 
 # Modifying a specific value
 modified_df = df.loc[<row_label>, <column_name>] = <new_value>   # Change value at specific row (label) and column
@@ -186,6 +197,7 @@ unique_df = df.drop_duplicates(subset=[<col1>, <col2>], keep='first')  # Remove 
 
 # Note: Assigning to a variable returns a new DataFrame; df itself is unchanged unless inplace=True is used, in which case the variable can be omitted.
 ```
+---
 
 ## Statistics, Aggregation and Grouping
 
@@ -193,18 +205,29 @@ unique_df = df.drop_duplicates(subset=[<col1>, <col2>], keep='first')  # Remove 
 ```python
 mean_val = df[<column>].mean()               # Mean of a column
 median_val = df[<column>].median()           # Median of a column
-std_val = df[<column>].std()                 # Standard deviation
-var_val = df[<column>].var()                 # Variance
-min_val = df[<column>].min()                 # Minimum value
-max_val = df[<column>].max()                 # Maximum value
-sum_val = df[<column>].sum()                 # Sum of values
+std_val = df[<column>].std()                 # Standard deviation of a column
+var_val = df[<column>].var()                 # Variance of a column
+min_val = df[<column>].min()                 # Minimum value of a column
+max_val = df[<column>].max()                 # Maximum value of a column
+sum_val = df[<column>].sum()                 # Sum of values of a column
 count_val = df[<column>].count()             # Number of non-missing entries (can use on .isnull to get number of missing values)
+```
+
+### Cumulative operations
+```python
+cumsum_val = df[<column>].cumsum()          # Cumulative sum of the column
+cumprod_val = df[<column>].cumprod()        # Cumulative product of the column
+cummax_val = df[<column>].cummax()          # Cumulative maximum
+cummin_val = df[<column>].cummin()          # Cumulative minimum
+
+#Note: Returns a Series of the same length as the original column
 ```
 ### Correlation and covariance
 ```python
 corr_df = df.corr()                          # Pairwise correlation of numeric columns
 cov_df = df.cov()                            # Pairwise covariance of numeric columns
 ```
+
 ### Aggregation
 ```python
 agg_df = df.agg({<column1>: ['sum','mean'], <column2>: ['min','max']})      # Aggregate with multiple functions for multiple columns
@@ -215,5 +238,45 @@ agg_df = df.agg({<column1>: ['sum','mean'], <column2>: ['min','max']})      # Ag
 grouped = df.groupby(<column>)                                              # Group by a column
 group_summary = grouped[<column_to_aggregate>].agg(['sum','mean','count'])  # Apply aggregation after grouping
 ```
+---
 
+## Categorial Data
+```python
+### Categorical Data
 
+# Creating categorical columns
+df['Category'] = pd.Categorical(['High', 'Medium', 'Low', 'Medium', 'High'])
+# You can also specify the category order
+df['Category'] = pd.Categorical(df['Category'], categories=['Low','Medium','High'], ordered=True)
+
+# Converting existing columns to categorical
+df['Category'] = df['Category'].astype('category')
+
+# Viewing category information
+df['Category'].cat.categories        # Get the list of categories
+df['Category'].cat.ordered           # Check if the categories are ordered
+df['Category'].cat.codes             # Get integer codes for the categories
+
+# Changing categories
+df['Category'] = df['Category'].cat.rename_categories({'Low':'L', 'Medium':'M', 'High':'H'})  # Rename categories
+df['Category'] = df['Category'].cat.add_categories(['Very High'])   # Add new category
+df['Category'] = df['Category'].cat.remove_categories(['M'])       # Remove a category
+
+# Reordering categories
+df['Category'] = df['Category'].cat.reorder_categories(['L','M','H','Very High'], ordered=True)
+
+# Sorting by categorical column
+df_sorted = df.sort_values('Category')  # Uses the order if ordered=True
+
+# Aggregating by categorical data
+df.groupby('Category')['SomeNumericColumn'].mean()   # Mean of numeric values per category
+
+# Converting categories to dummy/indicator variables (for ML)
+dummies = pd.get_dummies(df['Category'], prefix='Cat')  # One-hot encoding
+df = pd.concat([df, dummies], axis=1)
+
+```
+
+---
+
+### Time Series Analysis
