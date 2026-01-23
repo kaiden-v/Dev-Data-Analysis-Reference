@@ -350,7 +350,9 @@ arr_symdiff = np.setxor1d(<array1>, <array2>)           # Elements in either arr
 ```python
 # Basic Operations
 diag_arr = np.diag(A)                                               # Extract diagonal of matrix as 1D array
+A_T = A.T                                                           # Transpose Matrix
 dot_product = np.dot(A, B)                                          # Calculates the dot product of two matrices (Alternative using @ operator)
+c = np.cross(a, b)                                                  # Calculates the cross product of vectors
 trace_val = np.trace(A)                                             # Calculates the trace of a matrix (sum of diagonal elements)
 det_val = np.linalg.det(A)                                          # Calculates the determinant of a matrix
 rank_A = np.linalg.matrix_rank(A)                                   # Calculates the Rank of a matrix
