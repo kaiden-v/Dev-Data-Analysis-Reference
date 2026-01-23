@@ -143,7 +143,7 @@ modified_df = df.rename(columns={<old>: <new>})                  # Rename column
 modified_df = df.rename(index={<old>: <new>})                    # Rename row labels
 
 # Sorting data
-modified_df = df.sort_values(by=<column_name>, ascending=<True_or_False>)  # Sort by column
+modified_df = df.sort_values(by=<column_name>, ascending=<True_or_False>)    # Sort by column
 modified_df = df.sort_index(ascending=<True_or_False>)                       # Sort by index
 
 # Note: Assigning to a variable returns a new DataFrame; df itself is unchanged unless inplace=True is used which then variable can be removed
@@ -186,3 +186,34 @@ unique_df = df.drop_duplicates(subset=[<col1>, <col2>], keep='first')  # Remove 
 
 # Note: Assigning to a variable returns a new DataFrame; df itself is unchanged unless inplace=True is used, in which case the variable can be omitted.
 ```
+
+## Statistics, Aggregation and Grouping
+
+### Summary Statistics
+```python
+mean_val = df[<column>].mean()               # Mean of a column
+median_val = df[<column>].median()           # Median of a column
+std_val = df[<column>].std()                 # Standard deviation
+var_val = df[<column>].var()                 # Variance
+min_val = df[<column>].min()                 # Minimum value
+max_val = df[<column>].max()                 # Maximum value
+sum_val = df[<column>].sum()                 # Sum of values
+count_val = df[<column>].count()             # Number of non-missing entries (can use on .isnull to get number of missing values)
+```
+### Correlation and covariance
+```python
+corr_df = df.corr()                          # Pairwise correlation of numeric columns
+cov_df = df.cov()                            # Pairwise covariance of numeric columns
+```
+### Aggregation
+```python
+agg_df = df.agg({<column1>: ['sum','mean'], <column2>: ['min','max']})      # Aggregate with multiple functions for multiple columns
+```
+
+### Grouping
+```python
+grouped = df.groupby(<column>)                                              # Group by a column
+group_summary = grouped[<column_to_aggregate>].agg(['sum','mean','count'])  # Apply aggregation after grouping
+```
+
+
