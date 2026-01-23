@@ -1,3 +1,3 @@
 ## Command Line Interface and Git References
-- [Command Line Interface](CommandLineInterface.md)
+- [Command Line Interface](CommandLineInterfaceReference.md)
 - [Git Reference](GitReference.md)
