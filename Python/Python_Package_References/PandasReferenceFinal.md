@@ -49,7 +49,7 @@ s = pd.Series(data, index=index)     # Initialize Series
 
 ### Dataframe
 A DataFrame is a two-dimensional labeled data structure with rows and columns, like a table or spreadsheet. Columns can have different data types. Creating a DataFrame:
-```python
+```python 
 data = {
     <column_name_1>: [<column_1_data>],     # Initialize data
     ...,
@@ -94,3 +94,95 @@ df.index        # Get row indices
 ```
 
 ---
+
+## Selection, Indexing and Filtering
+
+### Standard Selection and Indexing
+How to select rows, columns, or specific cells in a DataFrame or Series.
+```python
+# Selecting columns
+column = df[<column_name>]                      # Select single column as Series
+columns = df[[<column_1>, <column_2>]]          # Select multiple columns as DataFrame
+
+# Select rows
+row = df.loc[<row_label>]                       # Select row by label/index
+cell = df.loc[<row_label>, <column_name>]       # Select specific cell by label
+
+# Interger indexing
+row_pos = df.iloc[<row_index>]                  # Select row by integer position
+cell_pos = df.iloc[<row_index>, <col_index>]    # Select specific cell by position
+```
+
+### Filtering and Conditional Selection
+Selecting data based on conditions.
+```python
+filtered_df = df[<conditional_expression>]      # Filter rows based on condition(s), e.g. df[<column_name>] <value>, & (and), | (or)
+```
+
+---
+
+## Modifying Series or DataFrame
+
+### Single Series or DataFrame Manipulation
+```python
+# Adding new columns
+modified_df = df[<new_column>] = <expression_or_value_or_list>   # Create a new column based on an expression, single value, or list
+
+# Modifying existing columns
+modified_df = df[<column_name>] = <expression_or_value_or_list>  # Updates an existing column based on an expression, single value, or list
+
+# Modifying a specific value
+modified_df = df.loc[<row_label>, <column_name>] = <new_value>   # Change value at specific row (label) and column
+modified_df = df.iloc[<row_index>, <col_index>] = <new_value>    # Change value by integer positions
+
+# Dropping rows or columns
+modified_df = df.drop(<column_or_row>, axis=<0_or_1>)             # Drop a row (axis=0) or column (axis=1)
+
+# Renaming columns or index
+modified_df = df.rename(columns={<old>: <new>})                  # Rename columns
+modified_df = df.rename(index={<old>: <new>})                    # Rename row labels
+
+# Sorting data
+modified_df = df.sort_values(by=<column_name>, ascending=<True_or_False>)  # Sort by column
+modified_df = df.sort_index(ascending=<True_or_False>)                       # Sort by index
+
+# Note: Assigning to a variable returns a new DataFrame; df itself is unchanged unless inplace=True is used which then variable can be removed
+```
+
+### Combining DataFrames
+```python
+# Concatenation
+df_combined = pd.concat([df1, df2], axis=<0_or_1>)                      # Combine DataFrames vertically (axis=0) or horizontally (axis=1)
+
+# Merging / Joining
+df_merged = pd.merge(df1, df2, on=<column_name>, how=<inner_or_outer>)  # Merge on column with inner/outer join
+```
+
+---
+
+## Data Cleaniing
+```python
+# Detect missing values
+missing_df = df.isnull()                        # Returns a DataFrame of True/False indicating missing values
+not_missing_df = df.notnull()                   # Returns a DataFrame of True/False indicating filled values
+
+# Drop missing values
+clean_df = df.dropna()                          # Drop any row with at least one missing value (drops samples with missing data variables)
+clean_df = df.dropna(axis=1)                    # Drop columns with at least one missing value (drops a data variable)
+clean_df = df.dropna(subset=[<col1>, <col2>])   # Drop rows if specific columns are missing (drops samples if specific data variables are missing)
+
+# Fill missing values
+filled_df = df.fillna(<value>)                  # Replace all missing values with a specified value: df can be replaced with df[<column>] to specify columns
+filled_df = df.fillna(method='ffill')           # Forward fill: fill missing with previous row value: df can be replaced with df[<column>] to specify columns
+filled_df = df.fillna(method='bfill')           # Backward fill: fill missing with next row value: df can be replaced with df[<column>] to specify columns
+
+# Replace values
+replaced_df = df.replace(<old_value>, <new_value>)                  # Replace specific values: df can be replaced with df[<column>] to specify columns
+replaced_df = df.replace({<col1>: <new_val1>, <col2>: <new_val2>})  # Replace values in specific columns
+
+# Removing duplicates
+unique_df = df.drop_duplicates()                                       # Remove rows that are exact duplicates (drops duplicate samples)
+unique_df = df.drop_duplicates(subset=[<col1>, <col2>], keep='first')  # Remove duplicates based on specific columns (drops duplicates if a specific data variable is the sawe)
+
+# Note: Assigning to a variable returns a new DataFrame; df itself is unchanged unless inplace=True is used, in which case the variable can be omitted.
+```
