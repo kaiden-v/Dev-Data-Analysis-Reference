@@ -242,39 +242,42 @@ group_summary = grouped[<column_to_aggregate>].agg(['sum','mean','count'])  # Ap
 
 ## Categorial Data
 ```python
-### Categorical Data
-
 # Creating categorical columns
-df['Category'] = pd.Categorical(['High', 'Medium', 'Low', 'Medium', 'High'])
+
+df[<new_category_column>] = pd.Categorical([<list_of_categories>])
+
 # You can also specify the category order
-df['Category'] = pd.Categorical(df['Category'], categories=['Low','Medium','High'], ordered=True)
+df[<new_category_column>] = pd.Categorical(
+    df[<new_category_column>], 
+    categories=[<ordered_category_list>], 
+    ordered=True
+)
 
 # Converting existing columns to categorical
-df['Category'] = df['Category'].astype('category')
+df[<existing_column>] = df[<existing_column>].astype('category')
 
 # Viewing category information
-df['Category'].cat.categories        # Get the list of categories
-df['Category'].cat.ordered           # Check if the categories are ordered
-df['Category'].cat.codes             # Get integer codes for the categories
+df[<category_column>].cat.categories        # Get the list of categories
+df[<category_column>].cat.ordered           # Check if the categories are ordered
+df[<category_column>].cat.codes             # Get integer codes for the categories
 
 # Changing categories
-df['Category'] = df['Category'].cat.rename_categories({'Low':'L', 'Medium':'M', 'High':'H'})  # Rename categories
-df['Category'] = df['Category'].cat.add_categories(['Very High'])   # Add new category
-df['Category'] = df['Category'].cat.remove_categories(['M'])       # Remove a category
+df[<category_column>] = df[<category_column>].cat.rename_categories({<old1>: <new1>, <old2>: <new2>, ...})   # Rename categories
+df[<category_column>] = df[<category_column>].cat.add_categories([<new_category>])                           # Add new category
+df[<category_column>] = df[<category_column>].cat.remove_categories([<category_to_remove>])                  # Remove a category
 
 # Reordering categories
-df['Category'] = df['Category'].cat.reorder_categories(['L','M','H','Very High'], ordered=True)
+df[<category_column>] = df[<category_column>].cat.reorder_categories([<new_order_list>], ordered=True)
 
 # Sorting by categorical column
-df_sorted = df.sort_values('Category')  # Uses the order if ordered=True
+df_sorted = df.sort_values(<category_column>)  # Uses the order if ordered=True
 
 # Aggregating by categorical data
-df.groupby('Category')['SomeNumericColumn'].mean()   # Mean of numeric values per category
+df.groupby(<category_column>)[<numeric_column>].agg(<aggregation_function_or_list>)  # Aggregate numeric data by category
 
 # Converting categories to dummy/indicator variables (for ML)
-dummies = pd.get_dummies(df['Category'], prefix='Cat')  # One-hot encoding
+dummies = pd.get_dummies(df[<category_column>], prefix=<prefix>)  # One-hot encoding
 df = pd.concat([df, dummies], axis=1)
-
 ```
 
 ---
