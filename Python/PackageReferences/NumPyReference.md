@@ -96,12 +96,12 @@ arr_multinomial = np.random.multinomial(n=<trials>, pvals=<prob_array>, size=<si
 ```python
 # Saving
 np.save(<file_name>, arr)                                                   # Saves array to a .npy file
-np.savez(<file_name>, <key_1>=<arr_1>, ..., <key_n>=<arr_n>)                # Saves multiple arrays to a .npy file
-np.savez_compressed(<file_name>, <key_1>=<arr_1>, ..., <key_n>=<arr_n>)     # Saves multiple arrays to a compresesed .npy file
+np.savez(<file_name>, <key_1>=<arr_1>, ..., <key_n>=<arr_n>)                # Saves multiple arrays to a .npz file
+np.savez_compressed(<file_name>, <key_1>=<arr_1>, ..., <key_n>=<arr_n>)     # Saves multiple arrays to a compresesed .npz file
 
 # Loading
-arr = np.load(<file_path>)                                                  # load a single array from a .npy file
-arr_1, ..., arr_n = np.load(<file_path=>)                                   # load multiple arrays from a .npy file
+arr = np.load(<file_path>)                                                  # load a single array from a .npz file
+arr_1, ..., arr_n = np.load(<file_path=>)                                   # load multiple arrays from a .npz file
 
 ```
 
