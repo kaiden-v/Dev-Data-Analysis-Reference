@@ -40,13 +40,14 @@ Markdown provides six levels of headings to organise content. The first typicall
 
 Markdown allows for all the standard text formats
 ```markdown
-<standard typing>  
-*<italic>*
-**<bold>**
-***<bold_italic>***
-~~<strikethrough>~~
-> <block quote>
->> <nested block quote>
+<standard typing>             # Regular text
+*<italic>*                    # Italic text
+**<bold>**                    # Bold text
+***<bold_italic>***           # Bold + Italic
+~~<strikethrough>~~           # Strikethrough text
+> <block quote>               # Blockquote
+>> <nested block quote>       # Nested blockquote
+`<inline code>`               # Inline code                    
 ```
 ---
 ### Spacing and Line Breaks
