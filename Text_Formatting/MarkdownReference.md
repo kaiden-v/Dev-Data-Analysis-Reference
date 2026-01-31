@@ -40,22 +40,25 @@ Markdown provides six levels of headings to organise content. The first typicall
 
 Markdown allows for all the standard text formats
 ```markdown
-<standard typing>             # Regular text
+<regular_text>                # Regular text
 *<italic>*                    # Italic text
 **<bold>**                    # Bold text
 ***<bold_italic>***           # Bold + Italic
 ~~<strikethrough>~~           # Strikethrough text
-> <block quote>               # Blockquote
->> <nested block quote>       # Nested blockquote
-`<inline code>`               # Inline code                    
+> <block_quote>               # Blockquote
+>> <nested_block_quote>       # Nested blockquote            
 ```
 ---
-### Spacing and Line Breaks
+## Spacing and Line Breaks
+
+---
+
+## Lines and Breaks
 
 ---
 
 
-### Lists
+## Lists
 Lists in Markdown are used to organise items into bullet points (unordered) or numbers (ordered). Nested items can be created by indenting with spaces.
 #### Unordered Lists
 ```markdown
@@ -78,6 +81,25 @@ Lists in Markdown are used to organise items into bullet points (unordered) or n
         2. <subsubitem2>
 3. <item3>
 ```
+
+---
+
+## Tables
+
+Markdown allows you to create simple tables using pipes `|` and hyphens `-`. They can also be aligned
+
+### Basic Tables
+```markdown
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Row 1A   | Row 1B   | Row 1C   |
+| Row 2A   | Row 2B   | Row 2C   |
+
+### Aligned Tables
+| Left Align | Center Align | Right Align |
+|:-----------|:------------:|------------:|
+| Item 1     | Item 2       | Item 3      |
+| Item 4     | Item 5       | Item 6      |
 
 ---
 
@@ -124,9 +146,3 @@ Markdown allows you to add math through LaTeX typesetting. You can include inlin
 $<LaTex_Code>$          # Inserts inline math
 $$<LaTex_code>$$        # Inserts display math, centered on a new line
 ```
-
----
-
-## Tables
-
----
