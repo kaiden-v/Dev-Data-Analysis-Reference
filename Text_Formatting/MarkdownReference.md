@@ -109,16 +109,21 @@ Markdown allows you to add code either in line or in a block
 ```
 
 ### Code Blocks
-Use triple backticks for multi-line code blocks, optionally specifying the language for syntax highlighting:
+Use triple backticks for multi-line code blocks, optionally specifying the language for syntax highlighting.
 ```markdown
 ```<language>
 <code>
-# ``` 
+# ```               # Remove # to close code block
 ```
 
 ---
 
 ## Math
+Markdown allows you to add math through LaTeX typesetting. You can include inline math or display math.
+```markdown
+$<LaTex_Code>$          # Inserts inline math
+$$<LaTex_code>$$        # Inserts display math, centered on a new line
+```
 
 ---
 
