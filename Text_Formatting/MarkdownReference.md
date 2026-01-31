@@ -84,19 +84,31 @@ Lists in Markdown are used to organise items into bullet points (unordered) or n
 ## Links
 Markdown allows you to create hyperlinks to websites, files, or sections within your document. 
 ```markdown
-[<linkText>](<hyperlink>)       # Link to a website
-[<linkText>](<filepath>)        # Link to a file    
-[<linkText>](#<section>)        # Link to a section of the document
+[<linkText>](<https://example.com>)     # Link to a website
+[<linkText>](</Folder/File>)            # Link to a file    
+[<linkText>](#<section>)                # Link to a section of the document
 ```
 
 ---
 
 ## Images 
+Markdown allows you to add images in from the interenet or saved in the repository
+```markdown
+![<Alt_Text](<https://example.com/image.png>)   # Inserts image from the internet   
+![<Alt_Text](</Images/Image.png>)               # Inserts image from repository using relative path
+``
 
 ---
 
 ## Code 
+Markdown allows you to add code either in line or in a block
+```markdown
+`<inline_code>`
 
+```python
+python code
+```
+```
 ---
 
 ## Math
