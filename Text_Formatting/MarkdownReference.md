@@ -50,13 +50,34 @@ Markdown allows for all the standard text formats
 ```
 
 ---
-## Spacing and Line Breaks
+## Spacing (Paragraphs, Line Breaks and Horizontal Lines)
 
+### Paragraphs
+Paragraphs can be made in Markdown by leaving a blank line between lines of text.
+```markdown
+<first_paragraph>
+
+<second_paragraph>
+```
+
+### Line Breaks
+Line breaks can be made in Markdown by add two or more spaces at the end of the line
+<first_line>␣␣
+<second_line>
+
+### Horizontal Lines
+Horizontal lines can be made in Markdown by adding three or more hyphens, asterisks, or underscores on a line by themselves to create a divider
+```markdown
+---         
+***
+___
+```
+
+---         
+***
+___
 ---
 
-## Lines and Breaks
-
----
 
 
 ## Lists
