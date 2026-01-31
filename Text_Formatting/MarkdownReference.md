@@ -28,7 +28,7 @@ Markdown is a lightweight markup language used to format plain text in a clean, 
 ## Headings/Sections
 Markdown provides six levels of headings to organise content. The first typically is reserved for document title.
 ```markdown
-# Heading (Typicaly page title)
+# Heading 
 ## Subheading
 ### Sub-subheading
 #### Sub-sub-subheading
@@ -62,8 +62,10 @@ Paragraphs can be made in Markdown by leaving a blank line between lines of text
 
 ### Line Breaks
 Line breaks can be made in Markdown by add two or more spaces at the end of the line
+```markdown
 <first_line>␣␣
 <second_line>
+```
 
 ### Horizontal Lines
 Horizontal lines can be made in Markdown by adding three or more hyphens, asterisks, or underscores on a line by themselves to create a divider
