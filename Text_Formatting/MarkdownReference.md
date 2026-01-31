@@ -104,9 +104,8 @@ Markdown allows you to add images in from the interenet or saved in the reposito
 Markdown allows you to add code either in line or in a block
 
 ### Inline Code
-Use single backticks to highlight code within a sentence.
 ```markdown
-`<inline_code>`
+`<inline_code>`     # Highlights code within a sentence
 ```
 
 ### Code Blocks
@@ -114,7 +113,6 @@ Use triple backticks for multi-line code blocks, optionally specifying the langu
 ```markdown
 ```<language>
 <code>
-```
 ```
 
 ---
