@@ -1,4 +1,4 @@
-# Markdown Refernce
+# Markdown Reference
 
 ## Introduction
 
@@ -11,13 +11,15 @@ Markdown is a lightweight markup language used to format plain text in a clean, 
 ---
 
 ## Guide Sections
-- [Headings / Sections](#headings--sections)
+- [Headings / Sections](#headingssections)
 - [Text Formatting](#text-formatting)
-- [Spacing and Line Breaks](#spacing-and-line-breaks)
+- [Spacing (Paragraphs, Line Breaks and Horizontal Lines)](#spacing-paragraphs-line-breaks-and-horizontal-lines)
 - [Lists](#lists)
+- [Blockquotes](#blockquotes)
+- [Escaping Characters](#escaping-characters)
 - [Links](#links)
 - [Images](#images)
-- [Code Blocks](#code-blocks)
+- [Code Blocks](#code)
 - [Math](#math)
 - [Tables](#tables)
 
@@ -44,9 +46,7 @@ Markdown allows for all the standard text formats
 *<italic>*                    # Italic text
 **<bold>**                    # Bold text
 ***<bold_italic>***           # Bold + Italic
-~~<strikethrough>~~           # Strikethrough text
-> <block_quote>               # Blockquote
->> <nested_block_quote>       # Nested blockquote     
+~~<strikethrough>~~           # Strikethrough text  
 ```
 
 ---
@@ -73,12 +73,17 @@ Horizontal lines can be made in Markdown by adding three or more hyphens, asteri
 ___
 ```
 
----         
-***
-___
 ---
+## Escaping Characters
+Markdown treats certain characters as special syntax. To display them literally, escape them with a backslash `\`. These include:
+- \*
+- \#
+- \_
+- \-
+- \[
+- \]
 
-
+---
 
 ## Lists
 Lists in Markdown are used to organise items into bullet points (unordered) or numbers (ordered). Nested items can be created by indenting with spaces.
@@ -108,7 +113,7 @@ Lists in Markdown are used to organise items into bullet points (unordered) or n
 
 ## Tables
 
-Markdown allows you to create simple tables using pipes `|` and hyphens `-`. They can also be aligned
+Markdown allows you to create simple tables using pipes `|` and hyphens `-`. They can also be aligned.
 
 ### Basic Tables
 ```markdown
@@ -125,6 +130,24 @@ Markdown allows you to create simple tables using pipes `|` and hyphens `-`. The
 
 ---
 
+## Blockquotes
+
+Blockquotes in Markdown are used to highlight quotes, notes, or citations. You can also nest blockquotes for multiple levels.
+
+### Single-Level Blockquote
+```markdown
+> This is a blockquote.
+```
+
+### Nested Blockquotes
+Each additional > creates a deeper level of nesting.
+```markdown
+> This is the first level.
+>> This is the second level.
+>>> This is the third level.
+```
+
+--- 
 ## Links
 Markdown allows you to create hyperlinks to websites, files, or sections within your document. 
 ```markdown
