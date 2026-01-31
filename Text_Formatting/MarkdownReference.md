@@ -57,6 +57,30 @@ Markdown allows for all the standard text formats
 
 ### Lists
 
+#### Standard Lists
+```markdown
+- <item1>
+- <item2>
+- <item3>
+```
+##### Nested Standard Lists
+```markdown
+- <item>
+    - <subitem>
+        - <subsubitem>
+```
+#### Numbered Lists
+```markdown
+1. <item1>
+2. <item2>
+3. <item3>
+```
+##### Nested Numbered Lists
+```markdown
+1. <item>
+   1. <subitem>
+      1. <subsubitem>
+```
 ---
 
 ## Links
