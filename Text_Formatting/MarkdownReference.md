@@ -129,6 +129,7 @@ Markdown allows you to create simple tables using pipes `|` and hyphens `-`. The
 |:-----------|:------------:|------------:|
 | Item 1     | Item 2       | Item 3      |
 | Item 4     | Item 5       | Item 6      |
+```
 
 ---
 
