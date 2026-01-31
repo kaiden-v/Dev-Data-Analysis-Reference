@@ -156,9 +156,9 @@ Each additional > creates a deeper level of nesting.
 ## Links
 Markdown allows you to create hyperlinks to websites, files, or sections within your document. 
 ```markdown
-[<linkText>](<https://example.com>)     # Link to a website
-[<linkText>](</Folder/File>)            # Link to a file    
-[<linkText>](#<section>)                # Link to a section of the document
+[<link_text>](<https://example.com>)     # Link to a website
+[<link_text>](</Folder/File>)            # Link to a file    
+[<link_text>](#<section>)                # Link to a section of the document
 ```
 
 ---
@@ -166,8 +166,12 @@ Markdown allows you to create hyperlinks to websites, files, or sections within 
 ## Images 
 Markdown allows you to add images in from the interenet or saved in the repository
 ```markdown
-![<Alt_Text](<https://example.com/image.png>)   # Inserts image from the internet   
-![<Alt_Text](</Images/Image.png>)               # Inserts image from repository using relative path
+![<alt_text>](<https://example.com/image.png>)   # Inserts image from the internet   
+![<alt_text>](</Images/Image.png>)               # Inserts image from repository using relative path
+```
+If the image needs to be sized, a html tag can be used.
+```markdown
+<img src="<source>" alt="<alt_text>" width="<width>" height="<height>">
 ```
 
 ---
