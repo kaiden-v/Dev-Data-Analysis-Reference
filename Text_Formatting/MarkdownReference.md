@@ -96,7 +96,7 @@ Markdown allows you to add images in from the interenet or saved in the reposito
 ```markdown
 ![<Alt_Text](<https://example.com/image.png>)   # Inserts image from the internet   
 ![<Alt_Text](</Images/Image.png>)               # Inserts image from repository using relative path
-``
+```
 
 ---
 
