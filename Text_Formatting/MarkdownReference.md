@@ -84,9 +84,9 @@ Lists in Markdown are used to organise items into bullet points (unordered) or n
 ## Links
 Markdown allows you to create hyperlinks to websites, files, or sections within your document. 
 ```markdown
-[<linkText>](<hyperlink>)
-[<linkText>](<filepath>)
-[<linkText>](#<section>)
+[<linkText>](<hyperlink>)       # Link to a website
+[<linkText>](<filepath>)        # Link to a file    
+[<linkText>](#<section>)        # Link to a section of the document
 ```
 
 ---
