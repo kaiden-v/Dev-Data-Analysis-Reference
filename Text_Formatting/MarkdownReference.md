@@ -123,8 +123,10 @@ Markdown allows you to create simple tables using pipes `|` and hyphens `-`. The
 |----------|----------|----------|
 | Row 1A   | Row 1B   | Row 1C   |
 | Row 2A   | Row 2B   | Row 2C   |
+```
 
 ### Aligned Tables
+```markdown
 | Left Align | Center Align | Right Align |
 |:-----------|:------------:|------------:|
 | Item 1     | Item 2       | Item 3      |
