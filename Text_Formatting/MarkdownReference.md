@@ -26,7 +26,7 @@ Markdown is a lightweight markup language used to format plain text in a clean, 
 
 ---
 
-## Headings/Sections
+## Headings / Sections
 Markdown provides six levels of headings to organise content. The first typically is reserved for document title.
 ```markdown
 # Heading 
