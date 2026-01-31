@@ -22,3 +22,7 @@ A comprehensive reference for development tools, Coding Languages, command-line 
     - [Matplotlib Reference](Python/PackageReferences/MatplotlibReference.md)
     - [Scikit-Learn Reference](Python/PackageReferences/ScikitLearnReference.md)
     - [StatsModels Reference](Python/PackageReferences/StatsModelsReference.md)
+
+### Text Formatting
+- [Markdown Reference](Text_Formatting/MarkdownReference.md)
+- [LaTex Reference](Text_Formatting/LaTexReference.md)
