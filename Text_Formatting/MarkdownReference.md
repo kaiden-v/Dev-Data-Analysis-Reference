@@ -56,34 +56,38 @@ Markdown allows for all the standard text formats
 
 
 ### Lists
-
-#### Standard Lists
+Lists in Markdown are used to organise items into bullet points (unordered) or numbers (ordered). Nested items can be created by indenting with spaces.
+#### Unordered Lists
 ```markdown
 - <item1>
 - <item2>
+    - <subitem1>
+    - <subsubitem2>
+        - <subsubitem1>
+        - <subsubitem2>
 - <item3>
 ```
-##### Nested Standard Lists
-```markdown
-- <item>
-    - <subitem>
-        - <subsubitem>
-```
-#### Numbered Lists
+
+#### Ordered Lists
 ```markdown
 1. <item1>
 2. <item2>
+    1. <subitem1>
+    2. <subitem2>
+        1. <subsubitem1>
+        2. <subsubitem2>
 3. <item3>
 ```
-##### Nested Numbered Lists
-```markdown
-1. <item>
-   1. <subitem>
-      1. <subsubitem>
-```
+
 ---
 
 ## Links
+Markdown allows you to create hyperlinks to websites, files, or sections within your document. 
+```markdown
+[<linkText>](<hyperlink>)
+[<linkText>](<filepath>)
+[<linkText>](#<section>)
+```
 
 ---
 
