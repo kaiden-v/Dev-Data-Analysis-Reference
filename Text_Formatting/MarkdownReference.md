@@ -17,6 +17,7 @@ Markdown is a lightweight markup language used to format plain text in a clean, 
 - [Lists](#lists)
 - [Blockquotes](#blockquotes)
 - [Escaping Characters](#escaping-characters)
+- [Changing Text Colour](#changing-text-colour)
 - [Links](#links)
 - [Images](#images)
 - [Code Blocks](#code)
@@ -151,8 +152,16 @@ Each additional > creates a deeper level of nesting.
 >> This is the second level.
 >>> This is the third level.
 ```
+---
+
+## Changing Text Colour
+Text colour can be changed in Markdown by using HTML.
+```markdown
+<span style="color:<colour>>"><text></span>
+```
 
 --- 
+
 ## Links
 Markdown allows you to create hyperlinks to websites, files, or sections within your document. 
 ```markdown
