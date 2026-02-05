@@ -348,22 +348,37 @@ arr_symdiff = np.setxor1d(<array1>, <array2>)           # Elements in either arr
 
 ## Linear Algebra
 ```python
-# Basic Operations
-diag_arr = np.diag(A)                                               # Extract diagonal of matrix as 1D array
-A_T = A.T                                                           # Transpose Matrix
-dot_product = np.dot(A, B)                                          # Calculates the dot product of two matrices (Alternative using @ operator)
-c = np.cross(a, b)                                                  # Calculates the cross product of vectors
-trace_val = np.trace(A)                                             # Calculates the trace of a matrix (sum of diagonal elements)
-det_val = np.linalg.det(A)                                          # Calculates the determinant of a matrix
-rank_A = np.linalg.matrix_rank(A)                                   # Calculates the Rank of a matrix
-norm_A = np.linalg.norm(A)                                          # Calculates the Frobenius (default) or L2 norm
-eig_vals, eig_vecs = np.linalg.eig(A)                               # Calculates the eigenvalues and eigenvectors of a matrix 
-inv_A = np.linalg.inv(A)                                            # Calculates the exact inverse of square matrix
-pinv_A = np.linalg.pinv(A)                                          # Calculates the Moore-Penrose pseudoinverse
-Q, R = np.linalg.qr(A)                                              # Calculates the QR decomposition: A = Q @ R
-U, S, Vh = np.linalg.svd(A)                                         # Calculates the Singular Value Decomposition: A = U @ diag(S) @ Vh
-x = np.linalg.solve(A, B)                                           # Solves the linear equation Ax = B exactly
-x_lstsq, residuals, rank, s = np.linalg.lstsq(A, B, rcond=None)     # Solves the Least-squares solution
+# Basic Matrix Operations
+diag_arr = np.diag(A)                     # Diagonal of matrix as 1D array
+A_T = A.T                                 # Transpose (can use np.linalg.matrix_transpose for matrix)
+AB = A @ B                                # Matrix multiplication (preferred over np.dot)
+dot_product = np.dot(a, b)                # Dot product of vectors
+c = np.cross(a, b)                        # Cross product (3D vectors only)
+trace_val = np.trace(A)                   # Trace (sum of diagonal)
+
+# Matrix Properties
+det_val = np.linalg.det(A)                # Determinant
+rank_A = np.linalg.matrix_rank(A)         # Rank
+norm_A = np.linalg.norm(A)                # Matrix norm (Frobenius by default)
+
+# Eigen / Decompositions
+eig_vals, eig_vecs = np.linalg.eig(A)     # Eigenvalues & eigenvectors
+Q, R = np.linalg.qr(A)                    # QR decomposition: A = Q @ R
+U, S, Vh = np.linalg.svd(A)               # SVD: A = U @ diag(S) @ Vh
+
+# Solving Systems
+x = np.linalg.solve(A, B)                 # Solve Ax = B (square, exact)
+x_lstsq, residuals, rank, s = np.linalg.lstsq(A, B, rcond=None)
+                                         # Least-squares solution
+
+# Inverses
+inv_A = np.linalg.inv(A)                  # Exact inverse (rarely needed in practice)
+pinv_A = np.linalg.pinv(A)                # Moore–Penrose pseudoinverse (safer)
+
+# Matrix Algebra Operations
+A2 = A @ A                                # Matrix square
+A_n = np.linalg.matrix_power(A, n)        # Matrix power A^n (IMPORTANT for Markov chains)
+multi = np.linalg.multi_dot([A, B, C])    # Efficient chained multiplication
 ```
 
 
